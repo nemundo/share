@@ -1,6 +1,6 @@
 {
-    "name": "urs.lang/share",
-    "description": "nemundo/share",
+    "name": "nemundo/share",
+    "description": "",
     "license": "MIT",
     "autoload": {
         "psr-4": {
