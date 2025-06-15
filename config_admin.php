@@ -1,0 +1,1 @@
+<?phpuse Nemundo\Share\ShareProject;require __DIR__ . "/config.php";(new \Nemundo\App\ModelDesigner\ModelDesignerConfig())    ->addProject(new ShareProject());

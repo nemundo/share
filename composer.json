@@ -1,0 +1,20 @@
+{
+    "name": "urs.lang/share",
+    "description": "nemundo/share",
+    "license": "MIT",
+    "autoload": {
+        "psr-4": {
+            "Nemundo\\Share\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "Urs Lang",
+            "email": "urs.lang@nemundo.ch"
+        }
+    ],
+    "minimum-stability": "dev",
+    "require": {
+        "nemundo/framework": "dev-master"
+    }
+}
