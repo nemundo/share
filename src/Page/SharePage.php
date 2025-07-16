@@ -14,7 +14,7 @@ use Nemundo\Share\Url\EmailUrlShare;
 use Nemundo\Share\Url\FacebookUrlShare;
 use Nemundo\Share\Url\LinkedinUrlShare;
 use Nemundo\Share\Url\TelegramUrlShare;
-use Nemundo\Share\Url\TwitterUrlShare;
+use Nemundo\Share\Url\XUrlShare;
 use Nemundo\Share\Url\WhatsAppUrlShare;
 
 class SharePage extends AbstractTemplateDocument
@@ -24,9 +24,8 @@ class SharePage extends AbstractTemplateDocument
 
         $layout = new AdminFlexboxLayout($this);
 
-        $title = new AdminTitle($this);
+        $title = new AdminTitle($layout);
         $title->content = ShareSite::$site->title;
-
 
         $search = new AdminSearchForm($layout);
 
@@ -51,7 +50,7 @@ class SharePage extends AbstractTemplateDocument
             $facebook->text = $text->getValue();
             $facebook->url = $url->getValue();
 
-            $twitter = new TwitterUrlShare();
+            $twitter = new XUrlShare();
             $twitter->text = $text->getValue();
             $twitter->url = $url->getValue();
 
@@ -72,7 +71,6 @@ class SharePage extends AbstractTemplateDocument
             $email->text = $text->getValue();
             $email->url = $url->getValue();
 
-
             $table = new AdminLabelValueTable($layout);
             $table->addLabelHyperlink('Facebook', $facebook->getUrl());
             $table->addLabelHyperlink('Twitter', $twitter->getUrl());
@@ -81,9 +79,7 @@ class SharePage extends AbstractTemplateDocument
             $table->addLabelHyperlink('WhatsApp', $whatsapp->getUrl());
             $table->addLabelHyperlink('eMail', $email->getUrl());
 
-
         }
-
 
         return parent::getContent();
     }
